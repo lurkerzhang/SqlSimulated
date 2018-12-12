@@ -373,15 +373,18 @@ def test_sql():
     ----------------------------------------'''
     print(sqls)
 
-
-if __name__ == '__main__':
+def main():
     test_sql()
     while True:
         sql = input("请输入sql语句(输入'Q'退出)>>>")
-        if sql.strip() in ['q','Q']:
+        if sql.strip() in ['q', 'Q']:
             exit('bye')
         else:
             sql_dic = sql_to_dic(sql)
             if sql_dic:
                 result = sql_dic['sql_exec'](sql_dic)
                 show_result(result)
+
+
+if __name__ == '__main__':
+    main()
